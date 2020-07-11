@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/options.css" type="text/css">
+  <title>Reload All Tabs</title>
+</head>
+<body>
+
+  <div id="body-container">
+    <div id="header"><h1>Reload All Tabs <em id="version"></em></h1></div>
+    <p>
+      I'll be adding more options at some point in the future. However, currently I've got my hands full with college.<br>
+      Contact Information: luka_momcilovic@hotmail.com
+    </p>
+    <div id="container">
+
+    <div class="extension-template">
+      <div class="extension-header">&nbsp Some General Info</div>
+
+      <div class="extension-options">
+        <div id="ele3">
+          <img src="/img/browser-action.png"/> &nbsp &nbsp &nbsp &nbsp
+          <img src="/img/browser-action3.png"/>
+          <p>To remove the button, right click on the icon and choose <strong>Hide button</strong>. To show the button again, move your mouse to the position shown above, click it and while holding it drag the mouse to the left.
+          <br>The Current Set Keyboard-shortcut to refresh your selected default refresh-profile is: <u><strong><span id="keyboardShortcut"></span></strong></u> (it doesn't work till you choose a default refresh profile). <br> You can change this here: <a href="chrome://extensions/shortcuts" style="user-select: all; cursor:text;">chrome://extensions/shortcuts</a> (you have to manually Copy&Paste it onto the address bar. <br>
+          Chrome doesn't allow linking to native links). The "Refresh Setting" which you have set as default will be what the shortcut/brower-action triggers.</p>
+        </div>
+      </div>
+      
+      <div class="extension-options">
+          <div class="extension-header">&nbsp Do a <span style="font-weight:normal"><i> (Refresh Type):</i></span></div>
+          <ul>
+            <label><li><input type="radio" class="refreshType" name="refreshType" value="softRefresh" id="softRefresh">Soft Refresh</li></label>
+            <label><li><input type="radio" class="refreshType" name="refreshType" value="hardRefresh" id="hardRefresh">Hard Refresh</li><br></label>
+          </ul>
+          <div class="extension-header">&nbsp In the <span style="font-weight:normal"><i> (Window Type):</i></span></div>
+          <ul>
+            <label><li><input type="radio" class="windowType" name="windowType" value="currentWindow" id="currentWindow">Current Window</li></label>
+            <label><li><input type="radio" class="windowType" name="windowType" value="allWindows" id="allWindows">All Windows</li><br></label>
+          </ul>
+            <div class="ele">
+              <div class="extension-header" id="ele-extensionHeader">&nbsp Only refresh<span style="font-weight:normal"><i> (Alternative):</i></span></div>
+              <ul id="firstSection">
+              <label><li><input type="checkbox" class="alternatives" name="alternatives" value="mutedTabs" id="mutedTabs">Muted</li></label>
+              <label><li><input type="checkbox" class="alternatives" name="alternatives" value="pinnedTabs" id="pinnedTabs">Pinned</li></label>
+              <label><li><input type="checkbox" class="alternatives" name="alternatives" value="audibleTabs" id="audibleTabs">Audible</li></label>
+                <label>
+                  <li>
+                    <input type="checkbox" class="alternatives" name="alternatives" value="specifiedTabs" id="specifiedTabs">Only tabs with index:
+                    <input type="input" class="alternatives" id="specifiedTabsInput" placeholder="1,2,3,4">
+                  </li>
+                </label>
+                <label>
+                  <li>
+                    <input type="checkbox" class="alternatives" name="alternatives" value="tabsWithSpecifiedLinks" id="tabsWithSpecifiedLinks">Only tabs with these urls:
+                    <input type="input" class="alternatives" id="tabsWithSpecifiedLinksInput" placeholder="localhost.com:8000">
+                  </li>
+              </label><br>
+            </ul>
+              <p id="description">
+                <u>Single url:</u> bbc.com
+                <u>Multiple urls:</u> cnn.com,bbc.com<br>
+                <u>Single tab</u>: 1 or 2 og 9 (whatever really) <u>Multiple tabs:</u> 1,6,4,9,2 (whatever you want, but count from the left.)<br>
+                Comma separates the URLs/Indexes. No space between/before or after the indexes/urls & no comma at the end.
+              </p>
+            </div>
+            <div class="ele2">
+                <div class="extension-header">&nbsp&nbsp Refresh <span style="font-weight:normal"><i><span style="font-weight:normal"><i>(Alternative):</i></span></i></span></div>
+                <ul id="secondSection">
+                    <label><li><input type="checkbox"  class="alternatives" name="alternatives" value="allTabs" id="allTabs">All Tabs (but perhaps not some other tabs?)</li></label>
+                    <label><li style="margin-left:30px"><input type="checkbox" class="allTabsAlternatives" name="allTabsAlternatives" value="notMuted" id="notMuted">Not Muted</li></label>
+                    <label><li style="margin-left:30px"><input type="checkbox" class="allTabsAlternatives" name="allTabsAlternatives" value="notPinned" id="notPinned">Not Pinned</li></label>
+                    <label><li style="margin-left:30px"><input type="checkbox" class="allTabsAlternatives" name="allTabsAlternatives" value="notAudible" id="notAudible">Not Audible</li></label>
+
+                    <label>
+                      <li style="margin-left:30px">
+                        <input type="checkbox" class="allTabsAlternatives" name="allTabsAlternatives" value="notSpecifiedTabs" id="notSpecifiedTabs">Not tabs with index:
+                        <input type="input" class="allTabsAlternatives" id="notSpecifiedTabsInput" placeholder="1,2,3,4">
+                      </li>
+                  </label>
+                    <label>
+                      <li style="margin-left:30px">
+                        <input type="checkbox" class="allTabsAlternatives" name="allTabsAlternatives" value="notTabsWithSpecifiedLinks" id="notTabsWithSpecifiedLinks">Not tabs with these urls:
+                        <input type="input" class="allTabsAlternatives" id="notTabsWithSpecifiedLinksInput" placeholder="youtube.com,google.com">
+                    </li>
+                    </label>
+                </ul>
+            </div><br>
+
+      <div id="historyText">
+      <div class="extension-options">
+          <div class="extension-header">&nbsp All Added Refresh Profiles <em style="font-size:10px">(you can remove all the refresh-profiles by right-clicking and choosing "Remove All Refresh Profiles")</em></div><br>
+              <div id ="savedSettingsContainer">
+                <ol id="savedSettings">
+                </ol>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+    <div id="extension-footer">
+      <span id="info-message">Options saved!</span>
+      <button id="addRefreshSettingsButton">Save</button>
+    </div>
+
+    <div id="credits">
+      <i>Extension developed by <a href="https://stackoverflow.com/users/11790812/lukact">Luka Momcilovic</a>,
+    </div>
+
+  </div> <!--Container Closing Tag-->
+  </div> <!--Body Container Closing Tag-->
+</body>
+<script src="lodash.js"></script>
+<script src="options.js"></script>
+</html>
