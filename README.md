@@ -6,7 +6,7 @@
 
 ---
 
-Find the extension [here](https://chromewebstore.google.com/detail/your-extension-id).
+Find the extension [here](https://chromewebstore.google.com/detail/icncdnmkpbfelimpahkncfjdkdhgammm).
 
 ---
 
